@@ -132,7 +132,7 @@ export default function Transfers() {
       </header>
 
       <div className="grid gap-4 lg:grid-cols-5">
-        <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs lg:col-span-3">
+        <section className="rounded-xl border border-slate-200 bg-white p-5 lg:col-span-3">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-3 sm:grid-cols-2">
               <div>
@@ -276,7 +276,7 @@ export default function Transfers() {
               </Link>
             </section>
           ) : (
-            <section className="rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-500 shadow-xs">
+            <section className="rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-500">
               <h2 className="text-sm font-semibold text-slate-700">What happens on post</h2>
               <ol className="mt-3 list-decimal space-y-2 pl-4">
                 <li>Server validates ids, currency match and positive amount.</li>

@@ -99,7 +99,7 @@ export default function Accounts() {
       </header>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+        <section className="rounded-xl border border-slate-200 bg-white p-5">
           <h2 className="text-sm font-semibold">Open a new account</h2>
           <form onSubmit={handleCreate} className="mt-4 space-y-4">
             <div>
@@ -186,7 +186,7 @@ export default function Accounts() {
           </form>
         </section>
 
-        <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+        <section className="rounded-xl border border-slate-200 bg-white p-5">
           <h2 className="text-sm font-semibold">Add an existing account</h2>
           <p className="mt-1 text-xs text-slate-500">
             Paste an account UUID (verified against the API before remembering).
@@ -219,13 +219,13 @@ export default function Accounts() {
           description="Create one above, or add an existing account by UUID. Balances are always read live from the ledger."
         />
       ) : (
-        <section className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
+        <section className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
                 <th className="px-4 py-3 font-medium">Account</th>
-                <th className="px-4 py-3 font-medium">Kind</th>
-                <th className="px-4 py-3 font-medium">Currency</th>
+                <th className="hidden px-4 py-3 font-medium sm:table-cell">Kind</th>
+                <th className="hidden px-4 py-3 font-medium sm:table-cell">Currency</th>
                 <th className="px-4 py-3 text-right font-medium">Balance</th>
                 <th className="px-4 py-3" />
               </tr>
@@ -238,8 +238,8 @@ export default function Accounts() {
                     <td className="px-4 py-3">
                       <ShortId id={account.id} />
                     </td>
-                    <td className="px-4 py-3 text-slate-600">{account.kind}</td>
-                    <td className="px-4 py-3 text-slate-600">{account.currency}</td>
+                    <td className="hidden px-4 py-3 text-slate-600 sm:table-cell">{account.kind}</td>
+                    <td className="hidden px-4 py-3 text-slate-600 sm:table-cell">{account.currency}</td>
                     <td className="px-4 py-3 text-right font-medium tabular-nums text-slate-900">
                       {balance
                         ? formatDecimal(balance.balance, balance.currency)

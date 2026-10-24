@@ -19,7 +19,7 @@ function AccountCard({
   return (
     <Link
       to={`/activity?account=${account.id}`}
-      className="group rounded-xl border border-slate-200 bg-white p-5 shadow-xs transition-shadow hover:shadow-sm"
+      className="group rounded-xl border border-slate-200 bg-white p-5 transition-colors"
     >
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-slate-900">

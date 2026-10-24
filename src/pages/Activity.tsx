@@ -110,15 +110,15 @@ export default function Activity() {
         />
       ) : (
         <>
-          <section className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
+          <section className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-500">
                   <th className="px-4 py-3 font-medium">Date</th>
                   <th className="px-4 py-3 font-medium">Kind</th>
                   <th className="px-4 py-3 text-right font-medium">Amount</th>
-                  <th className="px-4 py-3 font-medium">Status</th>
-                  <th className="px-4 py-3 font-medium">Entry</th>
+                  <th className="hidden px-4 py-3 font-medium sm:table-cell">Status</th>
+                  <th className="hidden px-4 py-3 font-medium md:table-cell">Entry</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
@@ -148,8 +148,8 @@ export default function Activity() {
                       >
                         {amount}
                       </td>
-                      <td className="px-4 py-3 text-slate-600">{entry.status}</td>
-                      <td className="px-4 py-3">
+                      <td className="hidden px-4 py-3 text-slate-600 sm:table-cell">{entry.status}</td>
+                      <td className="hidden px-4 py-3 md:table-cell">
                         <ShortId id={entry.id} />
                       </td>
                     </tr>
