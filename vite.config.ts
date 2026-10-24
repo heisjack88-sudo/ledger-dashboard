@@ -10,6 +10,9 @@ const apiTarget = process.env.VITE_API_TARGET ?? 'http://localhost:3100';
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
+    // Fail loudly if 5173 is taken instead of silently moving ports —
+    // a dashboard opened against a stale instance looks broken.
+    strictPort: true,
     proxy: {
       '/v1': { target: apiTarget, changeOrigin: true },
       '/healthz': { target: apiTarget, changeOrigin: true },
